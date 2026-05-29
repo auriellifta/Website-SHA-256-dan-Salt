@@ -48,7 +48,7 @@ function sha256_manual(message) {
 // ============================================================
 const ADMIN_USER = 'admin';
 const ADMIN_PASS = 'admin123';
-const API_BASE   = 'http://127.0.0.1:5000/api';
+const API_BASE   = '"https://auriellifta.pythonanywhere.com/api"';
 
 function formatWaktu(detik) {
     return String(Math.floor(detik / 60)).padStart(2, '0') + ':' + String(detik % 60).padStart(2, '0');
