@@ -11,7 +11,7 @@ body {
    AUTH PANEL — STATE DEFAULT (Login tampil, Register tersembunyi)
    ============================================================ */
 .auth-form-container {
-    transition: all 0.6s ease-in-out;
+    transition: all 0.7s ease-in-out;
     position: absolute;
     top: 0;
     height: 100%;
@@ -53,8 +53,8 @@ body {
     transform: translateX(100%);
     opacity: 1;
     z-index: 5;
-    pointer-events: auto;   /* ✅ KUNCI: bisa diklik saat register aktif */
-    animation: showRegisterPanel 0.6s ease-in-out;
+    pointer-events: auto;   /* KUNCI: bisa diklik saat register aktif */
+    animation: showRegisterPanel 0.7s ease-in-out;
 }
 
 @keyframes showRegisterPanel {
@@ -176,4 +176,22 @@ html.dark #reg-msg.success {
 html:not(.dark) #login-msg.success,
 html:not(.dark) #reg-msg.success {
     color: #15803d !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .auth-form-container {
+        width: 100%; 
+    }
+    .auth-overlay-container {
+        display: none; /* Sembunyikan overlay di HP agar tidak menutupi form */
+    }
+    
+    /* Mencegah form terlempar ke luar layar saat di HP */
+    #auth-wrapper.active-panel .login-container {
+        transform: translateX(0);
+    }
+    #auth-wrapper.active-panel .register-container {
+        transform: translateX(0);
+    }
 }
